@@ -1,6 +1,10 @@
 <div class="sponsor bg-primary">
-    <div class="container">
-        <div class="d-flex align-items-center justify-content-end gap-4">
+    <div class="container py-1">
+        <div class="d-flex align-items-center justify-content-between gap-4">
+            <div class="d-flex align-items-center justify-content-center text-light gap-2">
+                <i class="fa-brands fa-vaadin" style="color: #f8f9fa;"></i>
+                <span>ADMIN</span>
+            </div>
             <div class="d-flex align-items-center justify-content-end gap-1 text-light">
                 <span>DC POWER&trade;</span>
                 <span>VISA&reg;</span>

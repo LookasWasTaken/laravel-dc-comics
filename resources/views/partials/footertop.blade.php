@@ -3,23 +3,23 @@
             <div id="lists" class="d-flex justify-content-between w-50">
                 <div class="double_list">
                     <ul class="list-unstyled">
-                        @foreach($links["1"] as $link)
+                        @foreach($db['links']['1'] as $link)
                         <li>{{$link}}</li>
                         @endforeach
                     </ul>
                     <ul class="list-unstyled">
-                        @foreach($links["2"] as $link)
+                        @foreach($db['links']['2'] as $link)
                         <li>{{$link}}</li>
                         @endforeach
                     </ul>
                 </div>
                 <ul class="list-unstyled">
-                        @foreach($links["3"] as $link)
+                        @foreach($db['links']['3'] as $link)
                         <li>{{$link}}</li>
                         @endforeach
                     </ul>
                     <ul class="list-unstyled">
-                        @foreach($links["4"] as $link)
+                        @foreach($db['links']['4'] as $link)
                         <li>{{$link}}</li>
                         @endforeach
                     </ul>

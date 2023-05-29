@@ -4,7 +4,7 @@
 <section id="card_section">
 <div class="container">
     <div class="row">
-        @foreach($comics as $comic)
+        @foreach($comicsDB as $comic)
         <div class="col-2 g-3">
             <div class="card border-0">
             <img class="img-fluid" src="{{ $comic['thumb'] }}" alt="{{$comic['title']}} Logo">

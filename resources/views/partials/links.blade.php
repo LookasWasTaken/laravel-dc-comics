@@ -6,6 +6,6 @@
         <ul>
         </ul>
         @include("partials.navbar")
-        <input type="text">
+        <input type="text" placeholder="SEARCH">
     </div>
 </div>
