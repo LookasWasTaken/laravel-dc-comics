@@ -1,1 +1,84 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+    font-family: "Roboto", sans-serif;
+
+    #header {
+        .sponsor {
+            select {
+                font-size: 16px;
+            }
+        }
+
+        #links {
+            .img-wrapper {
+                padding: 0.75rem 0;
+            }
+
+            nav {
+                .active {
+                    color: #0d6efd !important;
+                    box-shadow: inset 0 -4px 0 0 #0d6efd;
+                }
+
+                a {
+                    padding: 3.4rem 0 !important;
+                }
+            }
+        }
+    }
+
+    #jumbotron {
+        height: 420px;
+        background-image: url(../img/jumbotron.jpg);
+        background-size: cover;
+    }
+
+    main {
+        background-color: #303030;
+
+        #card_section {
+            padding: 2rem 0;
+            .card {
+                background-color: #303030;
+
+                img {
+                    object-fit: cover;
+                }
+
+                p {
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    padding-top: 0.5rem;
+                }
+            }
+
+        }
+    }
+
+    #footer {
+        #footer_top {
+            padding: 2rem 0;
+            background-image: url(../img/footer-bg.jpg);
+            background-size: cover;
+            overflow: hidden;
+            color: #716f6f;
+
+            ul>li:first-child {
+                color: white;
+                font-size: 1.75rem;
+            }
+
+            .img-wrapper {
+                top: 50%;
+                right: 0;
+                transform: translate(0, -50%);
+            }
+        }
+
+        #footer_bot {
+            padding: 2rem 0;
+            background-color: #303030;
+        }
+    }
+}
