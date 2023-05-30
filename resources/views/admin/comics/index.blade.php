@@ -3,6 +3,7 @@
 @section("content")
 <div class="container">
     <a name="add" id="add" class="text-uppercase btn btn-primary my-3" href="{{ route('comics.create') }}" role="button">add new comic</a>
+    <p class="text-uppercase fw-bold text-warning">results shown in descending order</p>
 
     <div class="table-responsive pb-3 rounded">
         <table class="table table-primary m-0">
