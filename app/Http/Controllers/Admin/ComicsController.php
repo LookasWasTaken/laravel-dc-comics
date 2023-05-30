@@ -49,7 +49,7 @@ class ComicsController extends Controller
             "type" => $request->type
         ];
         Comic::create($data);
-        return to_route('comics.index')->with("message", "Comic $request->title successfully added");
+        return to_route('comics.index')->with("message", "comic $request->title successfully added");
     }
 
     /**
@@ -72,7 +72,8 @@ class ComicsController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        $db = config("db");
+        return view("admin.comics.edit", compact("comic", "db"));
     }
 
     /**
@@ -84,7 +85,19 @@ class ComicsController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $data = [
+            "title" => $request -> title,
+            "description" => $request -> description,
+            "thumb" => $request -> thumb,
+            "price" => $request -> price,
+            "series" => $request -> series,
+            "sale_date" => $request -> sale_date,
+            "type" => $request -> type
+        ];
+
+        $comic->update($data);
+        
+        return to_route("comics.show", $comic -> id)->with("message", "comic $request->title successfully updated");
     }
 
     /**

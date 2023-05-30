@@ -2,7 +2,10 @@
 
 @section("content")
   <div class="container">
-    <form class="text-light p-5 bg-dark m-5 rounded" action="{{route('comics.store')}}" method="post">
+  <div class="d-flex justify-content-center align-items-center my-3 gap-3">
+        <a class="btn btn-secondary text-uppercase fw-bold" href="{{route('comics.index')}}">back</a>
+    </div>
+    <form class="text-light p-5 bg-dark m-3 rounded" action="{{route('comics.store')}}" method="post">
       @csrf
       <div class="mb-3 row">
         <label for="title" class="col-3 col-form-label text-uppercase">title:</label>
@@ -47,7 +50,7 @@
         </div>
       </div>
       <div>
-        <div class="text-center d-flex justify-content-center align-items-center gap-4">
+        <div class="text-center d-flex justify-content-center align-items-center gap-3">
           <button type="submit" class="btn btn-primary">ADD</button>
           <button type="reset" class="btn btn-danger">RESET</button>
         </div>

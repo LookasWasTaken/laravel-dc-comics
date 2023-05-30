@@ -34,10 +34,10 @@
                     <td>{{$comic->sale_date}}</td>
                     <td>{{$comic->type}}</td>
                     <td class="text-center">
-                        <a class="btn btn-primary" href="{{ route('comics.show', $comic->id) }}">
+                        <a class="btn btn-primary" href="{{route('comics.show', $comic->id)}}">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <a class="btn btn-success my-3" href="{{ route('comics.edit', $comic->id) }}">
+                        <a class="btn btn-success my-3" href="{{route('comics.edit', $comic->id)}}">
                             <i class="fa-regular fa-pen-to-square"></i>
                         </a>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{$comic->id}}">

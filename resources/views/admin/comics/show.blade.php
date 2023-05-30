@@ -2,7 +2,11 @@
 
 @section("content")
 <div class="container py-5">
-    <h4 class="text-warning mx-auto mt-2 mb-5 text-center text-uppercase">You are watching the item #{{$comic -> id}}</h4>
+    <h4 class="text-warning mx-auto my-2 text-center text-uppercase">You are watching the item #{{$comic -> id}}</h4>
+    <div class="d-flex justify-content-center align-items-center my-3 gap-3">
+        <a class="btn btn-warning text-uppercase fw-bold" href="{{route('comics.edit', $comic->id)}}">edit</a>
+        <a class="btn btn-secondary text-uppercase fw-bold" href="{{route('comics.index')}}">back</a>
+    </div>
     <div class="card w-50 mx-auto">
         <div class="card-header rounded">
             <h2 class="fw-bold">{{$comic->title}}</h2>
