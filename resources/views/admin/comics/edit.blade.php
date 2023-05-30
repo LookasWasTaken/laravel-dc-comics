@@ -43,7 +43,7 @@
             <small id="typeHelper" class="text-muted text-uppercase">Insert type there</small>
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-warning mx-3">Edit</button>
+            <button type="submit" class="btn btn-primary mx-3">Save</button>
             <button type="reset" class="btn btn-danger mx-3">Reset</button>
         </div>
     </form>

@@ -4,7 +4,7 @@
             <div class="d-flex align-items-center justify-content-center text-light gap-2">
                 <a class="btn" href="{{route('comics.index')}}">
                     <i class="fa-brands fa-vaadin" style="color: #f8f9fa;"></i>
-                    <span>ADMIN</span>
+                    <span class="text-light">ADMIN</span>
                 </a>
             </div>
             <div class="d-flex align-items-center justify-content-end gap-1 text-light">

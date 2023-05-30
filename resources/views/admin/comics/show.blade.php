@@ -24,8 +24,8 @@
                                         <img width="120" src="{{$comic->thumb}}" alt="">
                                     </div>
                                     <div class="modal-body">
-                                        <p class="mb-0 text-danger text-uppercase">Once confirmed, there</p>
-                                        <p class="mb-0 text-danger text-uppercase">will be no going back</p>
+                                        <p class="mb-0 text-danger text-uppercase text-center">Once confirmed, there</p>
+                                        <p class="mb-0 text-danger text-uppercase text-center">will be no going back</p>
                                     </div>
                                     <div class="modal-footer d-flex justify-content-center align-items-center gap-2">
                                         <form action="{{route('comics.destroy', $comic->id)}}" method="post">

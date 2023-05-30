@@ -20,31 +20,39 @@
         <table class="table table-primary m-0">
             <thead>
                 <tr class="text-uppercase">
-                    <th scope="col">ID</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Series</th>
-                    <th scope="col">Sale date</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Actions</th>
+                    <th class="text-center" scope="col">ID</th>
+                    <th class="text-center" scope="col">Image</th>
+                    <th class="text-center" scope="col">Title</th>
+                    <th class="text-center" scope="col">Description</th>
+                    <th class="text-center" scope="col">Price</th>
+                    <th class="text-center" scope="col">Series</th>
+                    <th class="text-center" scope="col">Sale date</th>
+                    <th class="text-center" scope="col">Type</th>
+                    <th class="text-center" scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($comicsDB as $comic)
-                <tr class="">
-                    <td scope="row">{{$comic->id}}</td>
-                    <td width="10%">
+                <tr>
+                    <td class="text-center align-middle" width="5%" scope="row">
+                        <span class="badge rounded-pill text-bg-dark">{{$comic->id}}</span>
+                    </td>
+                    <td class="text-center align-middle" width="10%">
                         <img class="img-fluid" src="{{$comic->thumb}}" alt="{{$comic->title}} image">
                     </td>
-                    <td>{{$comic->title}}</td>
-                    <td>{{$comic->description}}</td>
-                    <td>{{$comic->price}}</td>
-                    <td>{{$comic->series}}</td>
-                    <td>{{$comic->sale_date}}</td>
-                    <td>{{$comic->type}}</td>
-                    <td class="text-center">
+                    <td class="text-center align-middle">{{$comic->title}}</td>
+                    <td class="text-left align-middle">{{$comic->description}}</td>
+                    <td class="text-center align-middle">
+                        <span class="badge rounded-pill text-bg-success">{{$comic->price}}</span>
+                    </td>
+                    <td class="text-center align-middle">{{$comic->series}}</td>
+                    <td class="text-center align-middle" width="8%">
+                        <span class="badge rounded-pill text-bg-warning">{{$comic->sale_date}}</span>
+                    </td>
+                    <td class="text-center align-middle" width="10%">
+                        <span class="badge rounded-pill text-bg-light">{{$comic->type}}</span>
+                    </td>
+                    <td class="text-center align-middle">
                         <a class="btn btn-primary" href="{{route('comics.show', $comic->id)}}">
                             <i class="fa-solid fa-eye"></i>
                         </a>
