@@ -58,23 +58,27 @@
                             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header d-flex flex-column">
-                                        <h5 class="modal-title mb-2" id="modalTitle-{{$comic->id}}">Delete {{$comic->title}}</h5>
-                                        <img width="100" src="{{$comic->thumb}}" alt="">
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                                        <h5 class="text-muted fs-6 text-uppercase">You are going to delete</h5>
+                                        <h5 class="modal-title mb-2 text-uppercase fw-bold" id="modalTitle-{{$comic->id}}">{{$comic->title}}</h5>
+                                        <h5 class="modal-title mb-2 fs-6 text-muted" id="modalTitle-{{$comic->id}}">No. {{$comic->id}}</h5>
+                                        <img width="120" src="{{$comic->thumb}}" alt="">
                                     </div>
                                     <div class="modal-body">
-                                        <span class="text-danger fs-5">Are you sure you want delete this item?</span>
+                                        <p class="mb-0 text-danger text-uppercase">Once confirmed, there</p>
+                                        <p class="mb-0 text-danger text-uppercase">will be no going back</p>
                                     </div>
-                                    <div class="modal-footer">
+                                    <div class="modal-footer d-flex justify-content-center align-items-center gap-2">
                                         <form action="{{route('comics.destroy', $comic->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Confirm</button>
                                         </form>
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Return</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="close">Return</button>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </td>
                 </tr>
                 @endforeach
