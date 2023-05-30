@@ -2,6 +2,17 @@
 
 @section("content")
 <div class="container">
+    @if(Session::has('added'))
+    <div class="alert alert-success alert-dismissible fade show text-center fw-bold my-3" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <span>{{Session::get('added')}}</span>
+    </div>
+    @elseif(Session::has('deleted'))
+    <div class="alert alert-danger alert-dismissible fade show text-center fw-bold my-3" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <span>{{Session::get('deleted')}}</span>
+    </div>
+    @endif
     <a name="add" id="add" class="text-uppercase btn btn-primary my-3" href="{{ route('comics.create') }}" role="button">add new comic</a>
     <p class="text-uppercase fw-bold text-warning">results shown in descending order</p>
 

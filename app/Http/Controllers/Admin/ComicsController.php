@@ -49,7 +49,7 @@ class ComicsController extends Controller
             "type" => $request->type
         ];
         Comic::create($data);
-        return to_route('comics.index')->with("message", "comic $request->title successfully added");
+        return to_route('comics.index')->with("added", "comic $request->title successfully added");
     }
 
     /**
@@ -97,7 +97,7 @@ class ComicsController extends Controller
 
         $comic->update($data);
         
-        return to_route("comics.show", $comic -> id)->with("message", "comic $request->title successfully updated");
+        return to_route("comics.show", $comic -> id)->with("edited", "comic $request->title successfully edited");
     }
 
     /**
