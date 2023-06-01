@@ -28,9 +28,9 @@ class UpdateComicsRequest extends FormRequest
             'title' => 'required|min:5|max:200',
             'description' => 'nullable',
             'thumb' => 'nullable|max:255',
-            'price' => 'nullable',
-            'series' => 'nullable',
-            'sale_date' => 'nullable|date',
+            'price' => 'required|max:25',
+            'series' => 'required|max:255',
+            'sale_date' => 'required|date',
             'type' => 'nullable',
         ];
     }
