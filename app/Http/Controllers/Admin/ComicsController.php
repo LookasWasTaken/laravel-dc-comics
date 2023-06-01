@@ -42,9 +42,10 @@ class ComicsController extends Controller
     public function store(StoreComicsRequest $request)
     {
         // public function update(CHANGETHIS with the name ot the http/requests/storecomicsrequest.php $request, Comic $comic)
-        
+
         // request->validated
         $val_data = $request->validated();
+        // actually not working
         $data = [
             "title" => $request->title,
             "description" => $request->description,
@@ -93,22 +94,24 @@ class ComicsController extends Controller
     {
         // public function update(CHANGETHIS with the name ot the http/requests/updatecomicsrequest.php $request, Comic $comic)
         $val_data = $request->validated();
-            // on the store method too
-            // dd($val_data);
+        // on the store method too
+        // dd($val_data);
+
+        // actually not working
         $data = [
-            "title" => $request -> title,
-            "description" => $request -> description,
-            "thumb" => $request -> thumb,
-            "price" => $request -> price,
-            "series" => $request -> series,
-            "sale_date" => $request -> sale_date,
-            "type" => $request -> type
+            "title" => $request->title,
+            "description" => $request->description,
+            "thumb" => $request->thumb,
+            "price" => $request->price,
+            "series" => $request->series,
+            "sale_date" => $request->sale_date,
+            "type" => $request->type
         ];
-        
+
         $comic->update($val_data);
         // $comic->update($data);
-        
-        return to_route("comics.show", $comic -> id)->with("edited", "comic $request->title successfully edited");
+
+        return to_route("comics.show", $comic->id)->with("edited", "comic $request->title successfully edited");
     }
 
     /**

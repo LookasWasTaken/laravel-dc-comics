@@ -29,9 +29,15 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="thumb" class="form-label">COVER IMAGE PATH</label>
-            <input type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="only thumb path there" aria-describedby="thumbHelper" value="{{old('thumb', $comic->thumb)}}">
-            <small id="thumbHelper" class="text-muted text-uppercase">Insert path there</small>
+            <div class="d-flex flex-column justify-content-between gap-1">
+                <div class="flex-grow-1 mb-3">
+                <label for="thumb" class="form-label">COVER IMAGE PATH</label>
+                <input type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="only thumb path there" aria-describedby="thumbHelper" value="{{old('thumb', $comic->thumb)}}">
+                <small id="thumbHelper" class="text-muted text-uppercase">Insert path there</small>
+                </div>
+                <img class="rounded mb-0" width="200" src="{{$comic->thumb}}" alt="">
+                <p class="text-muted fs-6 mt-0 pt-0">current thumb</p>
+            </div>
             @error('thumb')
             <div class="alert alert-danger" role="alert">
                 <strong>Thumb, Error: </strong>{{$message}}
@@ -79,8 +85,9 @@
             @enderror
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-primary mx-3">Save</button>
-            <button type="reset" class="btn btn-danger mx-3">Reset</button>
+            <button type="submit" class="btn btn-primary text-uppercase mx-3">Save</button>
+            <button type="reset" class="btn btn-danger text-uppercase mx-3">Reset</button>
+            <a class="btn btn-secondary text-uppercase mx-3" href="{{route('comics.index')}}">back</a>
         </div>
     </form>
 </div>
