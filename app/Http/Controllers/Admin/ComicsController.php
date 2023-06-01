@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreComicsRequest;
+use App\Http\Requests\UpdateComicsRequest;
 
 class ComicsController extends Controller
 {
@@ -34,11 +36,15 @@ class ComicsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreComicsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComicsRequest $request)
     {
+        // public function update(CHANGETHIS with the name ot the http/requests/storecomicsrequest.php $request, Comic $comic)
+        
+        // request->validated
+        $val_data = $request->validated();
         $data = [
             "title" => $request->title,
             "description" => $request->description,
@@ -48,7 +54,7 @@ class ComicsController extends Controller
             "sale_date" => $request->sale_date,
             "type" => $request->type
         ];
-        Comic::create($data);
+        Comic::create($val_data);
         return to_route('comics.index')->with("added", "comic $request->title successfully added");
     }
 
@@ -83,8 +89,12 @@ class ComicsController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicsRequest $request, Comic $comic)
     {
+        // public function update(CHANGETHIS with the name ot the http/requests/updatecomicsrequest.php $request, Comic $comic)
+        $val_data = $request->validated();
+            // on the store method too
+            // dd($val_data);
         $data = [
             "title" => $request -> title,
             "description" => $request -> description,
@@ -94,8 +104,9 @@ class ComicsController extends Controller
             "sale_date" => $request -> sale_date,
             "type" => $request -> type
         ];
-
-        $comic->update($data);
+        
+        $comic->update($val_data);
+        // $comic->update($data);
         
         return to_route("comics.show", $comic -> id)->with("edited", "comic $request->title successfully edited");
     }
